@@ -1,5 +1,6 @@
 import csv
 import json
+# import awsgi
 
 from flask import Flask, request, jsonify
 
@@ -51,6 +52,9 @@ def post_data2():
     incoming_data2 = request.json
     print("Received data in Gitpod:", incoming_data2)
     return jsonify({"message": "Data received in Gitpod!", "received_data": incoming_data2}), 200
+
+# def lambda_handler(event, context):
+#     return awsgi.response(app, event, context, base64_content_types={"image/png"})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5030)
